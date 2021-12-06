@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!--  Fav Icon   -->
+    <link rel="apple-touch-icon" sizes="180x180" href="Fav icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Fav icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Fav icon/favicon-16x16.png">
+    <link rel="manifest" href="Fav icon/site.webmanifest">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+
+
+</head>
+
+<body>
+    <div class="maindiv">
+        <section class=" animate__animated animate__backInLeft">
+            <h1>Todo List</h1>
+            <div class="div1">
+                <input type="text" placeholder="Enter task to do" id="input">
+                <button onclick="add()"><i class="fas fa-plus-octagon"></i></button>
+                <button onclick="delAll()"><i class="fad fa-trash"></i></button>
+            </div>
+            <div class="tasks" id="tasks">
+                <ol id="ol">
+
+                </ol>
+            </div>
+        </section>
+    </div>
+
+
+
+</body>
+<script src="app.js"></script>
+
+</html>
