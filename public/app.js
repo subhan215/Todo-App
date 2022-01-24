@@ -8,17 +8,17 @@ const firebaseConfig = {
     appId: "1:65673007824:web:26cc66765193ec166684d5"
 };
 const app = firebase.initializeApp(firebaseConfig);
-var database = app.database();
+const database = app.database();
 
-var tasks = document.getElementById("tasks");
+let tasks = document.getElementById("tasks");
 
 function add() {
 
-    var input = document.getElementById("input");
-    var inputValue = input.value;
+    let input = document.getElementById("input");
+    let inputValue = input.value;
     if (inputValue.length > 3) {
-        var key = database.ref("/").push().key;
-        var todoObj = {
+        let key = database.ref("/").push().key;
+        let todoObj = {
             key: key,
             todo: inputValue
         }
@@ -36,12 +36,12 @@ function add() {
 
 }
 database.ref("todos").on("child_added", (data) => {
-    var li = document.createElement("li");
-    var liText = document.createTextNode(data.val().todo);
+    let li = document.createElement("li");
+    let liText = document.createTextNode(data.val().todo);
     li.appendChild(liText);
-    var tasks = document.getElementsByClassName("tasks");
+    let tasks = document.getElementsByClassName("tasks");
     tasks[0].appendChild(li);
-    var editIcon = document.createElement("i");
+    let editIcon = document.createElement("i");
     editIcon.className = "fal fa-edit";
     li.appendChild(editIcon);
     editIcon.setAttribute("onclick", "edit(this)");
@@ -73,7 +73,7 @@ function del(e) {
 
 }
 function edit(e) {
-    var editValue = prompt("Enter edit value", e.parentNode.firstChild.nodeValue);
+    let editValue = prompt("Enter edit value", e.parentNode.firstChild.nodeValue);
     e.parentNode.firstChild.nodeValue = editValue;
     database.ref("todos").child(e.id).update({
         todo: editValue
